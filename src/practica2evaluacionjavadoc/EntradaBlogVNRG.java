@@ -1,22 +1,33 @@
 package practica2evaluacionjavadoc;
 
-/*Clase para manejar las entradas de un blog.
- * La clase se creó el 21/3/1999 por Ana López.
- * Esta es la versión 2.3
+
+/**
+ * Clase para manejar las entradas de un blog
+ * @since 15/02/2023
+ * @author Vicky
+ * @version 2.4
  */
-//Modificar.
+
+//Clase EntradaBlogVNRG.
 public class EntradaBlogVNRG {
-	//separador es el ccarácter que separa ENTRADA DE del
-	//nombre del autor
 	
+	
+	/**
+         * separador es el carácter que separa ENTRADA DE del nombre del autor
+         */
 	public static char separador=':';
 	private int id;
 	private String texto;
 	private String autor;
 	
-	//Constructor de la clase. recibe el número de entrada, el nombre del autor
-	//de la entrada y el texto que contiene la entrada. Si el número de entrada
-	//es negativo, lanza una excepción.
+	//Constructor de la clase
+        /**
+         * 
+         * @param id Recibe el id
+         * @param autor Recibe el nombre del autor
+         * @param texto Recibe el texto de la entrada
+         * @throws IllegalArgumentException  Si el id es negativo, lanza una excepcion
+         */
 	public EntradaBlogVNRG(int id,String autor,String texto)throws IllegalArgumentException{
 		if(id<=0) throw new IllegalArgumentException("El id no puede ser negativo");
 		this.id=id;
@@ -31,30 +42,50 @@ public class EntradaBlogVNRG {
 		return cad;
 	}
 	
-	//Devuelve el número de la entrada
+	
+        /**
+         * 
+         * @return Devuelve el número de la entrada
+         */
 	public int getId(){
 		return this.id;
 	}
 	
-	//devuelve el texto completo de la entrada
+	
+        /**
+         * 
+         * @return devuelve el texto completo de la entrada
+         */
 	public String getTexto(){
 		return this.texto;
 	}
 	
-	//devuelve el nombre del autor de la entrada en mayúsculas
+	
+        /**
+         * 
+         * @return devuelve el nombre del autor de la entrada en mayúsculas
+         */
 	public String getAutor(){
 		return this.autor.toUpperCase();
 	}
 	
-	//devuelve el nombre del autor. Ya no se usa. Mejor ver getAutor
+	
+        /**
+         * 
+         * @return Devuelve el nombre autor
+         */
 	public String devuelveAutor(){
 		return this.autor;
 	}
 	
-	//No tiene porqué tener argumentos.
+	
+        /**
+         * 
+         * @param args argumentos del main, aunque puede no tenerlos
+         */
 	public static void main(String[] args) {
-                //Modificar.
-		EntradaBlogVNRG e1=new EntradaBlogVNRG (1,"ana","Últimas noticias, está disponible BixBy 2.0");
+                //creación objeto EntradaBlogVNRG con su constructor.
+		EntradaBlogVNRG e1=new EntradaBlogVNRG (1,"Victoria","Últimas noticias, está disponible BixBy 2.0");
 		System.out.println(e1);
 	}
 }
